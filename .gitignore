@@ -1,0 +1,7 @@
+# Visual Studio files
+.vs/
+*.suo
+*.user
+*.vcxproj.user
+*.cache
+*.log
