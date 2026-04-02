@@ -1,0 +1,21 @@
+{
+  "fps": 30,
+  "totalFrames": 1,
+  "pxPerFrame": 10,
+  "scrollX": 0,
+  "scrollY": 0,
+  "rulerH": 56,
+  "trackHeaderW": 240,
+  "trackH": 64,
+  "nextTrackId": 5,
+  "nextClipId": 2,
+  "tracks": [
+    {"id":1,"kind":1,"name":"Draw","engineTrackId":0,"visible":true,"locked":false,"muted":false},
+    {"id":2,"kind":2,"name":"Flow","engineTrackId":0,"visible":true,"locked":false,"muted":false},
+    {"id":3,"kind":0,"name":"Keyframe","engineTrackId":0,"visible":true,"locked":false,"muted":false},
+    {"id":4,"kind":3,"name":"Audio","engineTrackId":0,"visible":true,"locked":false,"muted":false}
+  ],
+  "clips": [
+    {"id":1,"trackId":1,"startFrame":0,"lengthFrames":1,"label":"Main"}
+  ]
+}

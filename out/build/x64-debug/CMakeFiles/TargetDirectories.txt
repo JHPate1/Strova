@@ -1,0 +1,3 @@
+C:/Users/hemal/source/repos/Motiondraw/out/build/x64-debug/CMakeFiles/Strova.dir
+C:/Users/hemal/source/repos/Motiondraw/out/build/x64-debug/CMakeFiles/edit_cache.dir
+C:/Users/hemal/source/repos/Motiondraw/out/build/x64-debug/CMakeFiles/rebuild_cache.dir

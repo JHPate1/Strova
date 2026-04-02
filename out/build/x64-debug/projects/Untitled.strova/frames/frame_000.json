@@ -1,0 +1,144 @@
+{
+  "strokes": [
+    {
+      "color": [0,0,0,255],
+      "thickness": 18,
+      "tool": 0,
+      "gradient": {
+        "enabled": 0,
+        "mode": 0,
+        "stopPos": [0,1,0,0],
+        "stopColor": [[255,0,0,255],[0,0,255,255],[0,0,0,255],[0,0,0,255]]
+      },
+      "settings": {
+        "size": 18,
+        "opacity": 1,
+        "spacing": 0.1,
+        "flow": 1,
+        "scatter": 0,
+        "hardness": 0.8,
+        "stabilizer": 0.18,
+        "airRadius": 60,
+        "airDensity": 0.5,
+        "strength": 0.5,
+        "smudgeStrength": 0.55,
+        "blurRadius": 8
+      },
+      "fillTolerance": 35,
+      "fillGapClose": 0,
+      "points": [[887.654,228.777,1],[914.955,261.537,1],[969.965,302.351,1],[1019.39,327.283,1],[1164.45,339.558,1],[1321.69,333.207,1],[1406.89,316.788,1],[1482.85,296.846,1],[1509.44,289.866,1],[1518.18,286.538,1]]
+    },
+    {
+      "color": [0,0,0,255],
+      "thickness": 26,
+      "tool": 12,
+      "gradient": {
+        "enabled": 0,
+        "mode": 0,
+        "stopPos": [0,1,0,0],
+        "stopColor": [[255,0,0,255],[0,0,255,255],[0,0,0,255],[0,0,0,255]]
+      },
+      "settings": {
+        "size": 26,
+        "opacity": 1,
+        "spacing": 0.1,
+        "flow": 1,
+        "scatter": 0,
+        "hardness": 0.9,
+        "stabilizer": 0.18,
+        "airRadius": 60,
+        "airDensity": 0.5,
+        "strength": 0.5,
+        "smudgeStrength": 0.55,
+        "blurRadius": 8
+      },
+      "fillTolerance": 35,
+      "fillGapClose": 0,
+      "points": [[355.298,307.947,1],[486.34,370.738,1],[571.517,408.003,1],[611.976,424.595,1],[659.852,426.853,1],[682.8,427.613,1]]
+    },
+    {
+      "color": [0,0,0,89],
+      "thickness": 60,
+      "tool": 4,
+      "gradient": {
+        "enabled": 0,
+        "mode": 0,
+        "stopPos": [0,1,0,0],
+        "stopColor": [[255,0,0,255],[0,0,255,255],[0,0,0,255],[0,0,0,255]]
+      },
+      "settings": {
+        "size": 60,
+        "opacity": 0.35,
+        "spacing": 0.06,
+        "flow": 0.55,
+        "scatter": 0,
+        "hardness": 0.25,
+        "stabilizer": 0.08,
+        "airRadius": 60,
+        "airDensity": 0.5,
+        "strength": 0.5,
+        "smudgeStrength": 0.55,
+        "blurRadius": 8
+      },
+      "fillTolerance": 35,
+      "fillGapClose": 0,
+      "points": [[248.827,182.366,1],[267.937,231.507,1],[306.977,444.449,1],[324.19,543.822,1],[340.861,614.093,1],[344.993,636.533,1],[346.643,644.566,1],[423.25,603.216,1],[920.31,457.429,1],[1094.28,404.629,1],[1155.17,387.923,1],[1161.42,384.984,1],[997.222,312.992,1]]
+    },
+    {
+      "color": [0,0,0,89],
+      "thickness": 60,
+      "tool": 4,
+      "gradient": {
+        "enabled": 0,
+        "mode": 0,
+        "stopPos": [0,1,0,0],
+        "stopColor": [[255,0,0,255],[0,0,255,255],[0,0,0,255],[0,0,0,255]]
+      },
+      "settings": {
+        "size": 60,
+        "opacity": 0.35,
+        "spacing": 0.06,
+        "flow": 0.55,
+        "scatter": 0,
+        "hardness": 0.25,
+        "stabilizer": 0.08,
+        "airRadius": 60,
+        "airDensity": 0.5,
+        "strength": 0.5,
+        "smudgeStrength": 0.55,
+        "blurRadius": 8
+      },
+      "fillTolerance": 35,
+      "fillGapClose": 0,
+      "points": [[751.153,264.267,1],[707.472,264.267,1],[508.726,266.041,1],[428.518,266.663,1],[746.476,273.978,1],[980.203,301.382,1]]
+    },
+    {
+      "color": [0,0,0,89],
+      "thickness": 60,
+      "tool": 4,
+      "gradient": {
+        "enabled": 0,
+        "mode": 0,
+        "stopPos": [0,1,0,0],
+        "stopColor": [[255,0,0,255],[0,0,255,255],[0,0,0,255],[0,0,0,255]]
+      },
+      "settings": {
+        "size": 60,
+        "opacity": 0.35,
+        "spacing": 0.06,
+        "flow": 0.55,
+        "scatter": 0,
+        "hardness": 0.25,
+        "stabilizer": 0.08,
+        "airRadius": 60,
+        "airDensity": 0.5,
+        "strength": 0.5,
+        "smudgeStrength": 0.55,
+        "blurRadius": 8
+      },
+      "fillTolerance": 35,
+      "fillGapClose": 0,
+      "points": [[816.673,373.468,1],[347.108,471.749,1],[833.327,489.494,1],[763.943,474.411,1],[670.452,449.612,1],[1052.97,527.884,1],[792.905,548.181,1],[641.55,519.795,1],[586.801,454.849,1],[647.492,483.579,1],[660.382,439.375,1],[657.192,421.818,1],[1465.34,596.235,1]]
+    }
+  ]
+}
