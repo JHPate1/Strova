@@ -1,0 +1,13 @@
+STROVA UI UNIFICATION PATCH NOTES
+
+Applied in this pass:
+- Expanded core/Theme.h into a real token source of truth.
+- Added ui/UiPrimitives.h for shared panel, header, button, input, card, scrollbar, and modal drawing.
+- DockManager now draws shared panel chrome instead of isolated one-off styling.
+- BrushCreatorScreen now routes text and button chrome through shared helpers and uses opaque modal dimming.
+- BrushResourceManager now uses shared button/modal chrome and wheel scrolling is scoped to hovered content regions.
+- ToolOptionsPanel now uses shared primitive rect drawing and the global scrollbar style.
+- Dock header height now comes from theme tokens.
+
+Not fully removed in this pass:
+- Editor.cpp still contains legacy embedded Brush Creator helper code, but the active runtime Brush Creator authority remains App::Mode::BrushCreator via brush/BrushCreatorScreen.cpp.

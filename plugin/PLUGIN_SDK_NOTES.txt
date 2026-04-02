@@ -1,0 +1,116 @@
+STROVA PLUGIN SDK NOTES
+
+This tree now exposes SDK constants in plugin/PluginABI.h for external plugin builds.
+Use the separate SDK zip for building plugins and packaging .strovin bundles.
+The host expects:
+- format = strovin
+- manifest_version = 1
+- ABI version = 1
+- host API version = 4
+
+
+FLOW / FLOWLINK RUNTIME RESULT CONTRACT
+======================================
+
+Chunk 2 runtime callbacks now support executable Flow and FlowLink processors.
+
+Required exports when capability is declared:
+- StrovaPlugin_ProcessFlow
+- StrovaPlugin_ProcessFlowLink
+
+The callback writes a small JSON object into the provided StrovaPluginTextBuffer.
+
+Recommended result shape:
+{
+  "output_type_id": "com.example.plugin.flowblob",
+  "content_schema_version": 1,
+  "plugin_version_saved": "1.0.0",
+  "attachment": {
+    "kind": "flow_segment",
+    "track_id": "12",
+    "start_frame": 24,
+    "end_frame": 32,
+    "frame": 24,
+    "owner_id": "processor.id"
+  },
+  "payload": { ... plugin owned content json ... },
+  "fallback_proxy": { ... optional preserved fallback json ... }
+}
+
+Notes:
+- "attachment" is optional. The host now supplies sane defaults from the active frame and target track.
+- Flat legacy keys are also accepted:
+  attachment_kind, attachment_track_id, attachment_start_frame, attachment_end_frame, attachment_frame, attachment_owner_id
+- output_type_id must be a content type registered by the same owning plugin.
+- payload is required in practice. If omitted, the host stores {}.
+- fallback_proxy is optional. If omitted, the host stores null.
+- The host commits output through project plugin content storage. Processors do not mutate project containers directly.
+- Missing, disabled, incompatible, or schema-unsupported plugins keep saved content preserved unresolved.
+
+
+CHUNK 3 CANVAS / ANALYSIS / EFFECT SURFACES
+==========================================
+
+Chunk 3 adds runtime surfaces meant for safe overlay and rig-style tooling plugins.
+
+New capabilities:
+- canvas_overlays
+- analysis_tools
+- brush_effects
+- stroke_effects
+- layer_tools
+
+Required exports when capability is declared:
+- StrovaPlugin_RenderCanvasOverlay
+- StrovaPlugin_RunAnalysis
+- StrovaPlugin_ApplyBrushEffect
+- StrovaPlugin_ApplyStrokeEffect
+
+Overlay contract notes:
+- The host passes layer_tree_json and selection_json.
+- The host accepts line-oriented draw commands.
+- Supported commands now include:
+  LINE x1 y1 x2 y2 [r g b [a]]
+  RECT x y w h [r g b [a]]
+  FILLRECT x y w h [r g b [a]]
+  CIRCLE x y radius [r g b [a]]
+  TEXT x y message
+  POLYLINE x1 y1 x2 y2 x3 y3 ...
+- This is enough for plugin-driven rig handles, bone links, joint markers, labels, and guides.
+
+Analysis contract notes:
+- Analysis callbacks receive the active frame, active track, layer tree, selection, and flow snapshot.
+- The callback returns plain text for UI display.
+
+Effect contract notes:
+- Brush and stroke effects are runtime-callable through the manager now.
+- Current Chunk 3 host path collects plugin effect JSON payloads without giving plugins raw renderer ownership.
+- This keeps the surface acceptable for future glow, bloom, outline, and rig-helper visualization plugins without hardcoding those features into Strova.
+
+
+CHUNK 4 EXPORT / VALIDATION / HARDENING SURFACES
+===============================================
+
+Chunk 4 adds the last bounded runtime surfaces needed for real shipping plugins.
+
+New capabilities:
+- export_passes
+- document_validators
+
+Required exports when capability is declared:
+- StrovaPlugin_RunExportPass
+- StrovaPlugin_RunDocumentValidator
+
+Export pass contract notes:
+- Export passes are host-invoked and receive a bounded export/editor-preview context.
+- The callback returns effect/config JSON through a text buffer.
+- This is the path meant for bake-time glow, outline, metadata stamping, and later export-only polish passes.
+
+Document validator contract notes:
+- Validators receive active frame, active track, layer tree, selection, and flow snapshot JSON.
+- The callback returns plain text or report text for diagnostics.
+- This gives plugin authors a safe path for rig validation, missing-layer checks, naming checks, pose-chain validation, and pre-export warnings.
+
+Hardening notes:
+- Capability declarations now require matching exports for these new surfaces too.
+- Chunk 4 keeps the plugin architecture aligned with a future rig plugin and glow/export plugin without hardcoding those features into Strova.
